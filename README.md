@@ -25,7 +25,7 @@ Test: border cases for 9,90, 900, etc
 Expect: romanNumerals(99).toEqual(XLIX) 
 
 ## *Setup instructions:*
-Clone repository by using this [URL](https://github.com/DanielAdeyemi/Epicodus_1_20_practice_pigLatin.git) and run the ***index.html*** file in your terminal
+Clone repository by using this [URL](https://github.com/DanielAdeyemi/Epicodus_1_21_practice_romanNumerals.git) and run the ***index.html*** file in your terminal
 
 ## *Tecnologies used:*
 * HTML
