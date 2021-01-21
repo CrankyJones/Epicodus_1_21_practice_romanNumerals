@@ -14,8 +14,15 @@ function romanNumerals(input) {
   for (let i = 0; i < parameters.length; i++) {
     let num = Math.trunc(input / parameters[i]);
     input = (input % parameters[i]);
-    sentence.push(convert(num, romNum[i]));
+    let ret = convert(num, romNum[i]);
+    if ((ret.length > 3) && (i !== 0)) {
+      sentence.push(romNum[i])
+      sentence.push(romNum[i - 1]);
+    } else {
+      sentence.push(ret);
+    }
   }
+
   return sentence.join('');
 
 
