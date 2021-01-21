@@ -8,11 +8,23 @@ function convert(number, letter) {
 
 function romanNumerals(input) {
   let sentence = [];
-  const m = Math.trunc(input / 1000);
+  let romNum = ['M', 'D', 'C', 'L', 'X', 'V', 'I'];
+  let parameters = [1000, 500, 100, 50, 10, 5, 1];
+
+  for (let i = 0; i < parameters.length; i++) {
+    let num = Math.trunc(input / parameters[i]);
+    input = (input % parameters[i]);
+    sentence.push(convert(num, romNum[i]));
+  }
+  return sentence.join('');
+
+
+
+  /*let rm = (input % 1000);
+  input = Math.trunc(input / 1000);
   const m1 = convert(m, 'M');
   sentence.push(m1);
 
-  let rm = (input % 1000);
   const d = Math.trunc(rm / 500);
   const d1 = convert(d, 'D');
   sentence.push(d1);
@@ -39,9 +51,8 @@ function romanNumerals(input) {
   sentence.push(v1);
   let i = (rm5 % 5);
   const i1 = convert(i, 'I');
-  sentence.push(i1);
+  sentence.push(i1);*/
 
-  return sentence.join('');
 }
 
 $(document).ready(function() {
